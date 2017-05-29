@@ -1,14 +1,14 @@
-##centos 6.7 x86_64
+#centos 6.7 x86_64
 
 
 # uname -a //查看linux内核版本
-# make TARGET=linux26 PREFIX=/usr/local/haproxy
-# make install PREFIX=/usr/local/haproxy
-# useradd -s /sbin/nologin haproxy
-# passwd haproxy
-# chown -R haproxy.haproxy /usr/local/haproxy
-#cp /softs/haproxy-1.5.12/examples/haproxy.cfg  /usr/local/haproxy/
-#haproxy.cfg配置文件
+make TARGET=linux26 PREFIX=/usr/local/haproxy
+make install PREFIX=/usr/local/haproxy
+useradd -s /sbin/nologin haproxy
+passwd haproxy
+chown -R haproxy.haproxy /usr/local/haproxy
+cp /softs/haproxy-1.5.12/examples/haproxy.cfg  /usr/local/haproxy/
+##haproxy.cfg配置文件
 global
 log 127.0.0.1 local0
 log 127.0.0.1 local1 notice
@@ -34,9 +34,9 @@ server centos3 172.16.19.4:3306 check
 server centos4 172.16.19.5:3306 check
 
 
-启动
+##启动
 /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg
-关闭
+##关闭
 killall haproxy
 
 重启
@@ -45,7 +45,7 @@ killall haproxy
 
 
 
-#haprxoy.cfg配置文件模板
+##haprxoy.cfg配置文件模板
 
 
 global
